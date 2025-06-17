@@ -1,0 +1,82 @@
+/* css/style.css */
+
+/* Basic styling for the chat interface */
+body {
+    font-family: 'Inter', sans-serif;
+}
+.chat-bubble-bot {
+    background-color: #f3f4f6; /* gray-100 */
+    color: #1f2937; /* gray-800 */
+    border-radius: 20px 20px 20px 5px;
+}
+.chat-bubble-user {
+    background-color: #3b82f6; /* blue-500 */
+    color: white;
+    border-radius: 20px 20px 5px 20px;
+}
+.options-container button {
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #d1d5db;
+}
+.options-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-color: #3b82f6;
+}
+/* Custom scrollbar for a cleaner look */
+#chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+#chat-box::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+#chat-box::-webkit-scrollbar-thumb {
+    background-color: #94a3b8;
+    border-radius: 10px;
+    border: 3px solid #f1f5f9;
+}
+/* Typing indicator animation */
+.dot-flashing {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #9ca3af;
+    color: #9ca3af;
+    animation: dotFlashing 1s infinite linear alternate;
+    animation-delay: .5s;
+}
+.dot-flashing::before, .dot-flashing::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+.dot-flashing::before {
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #9ca3af;
+    color: #9ca3af;
+    animation: dotFlashing 1s infinite alternate;
+    animation-delay: 0s;
+}
+.dot-flashing::after {
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #9ca3af;
+    color: #9ca3af;
+    animation: dotFlashing 1s infinite alternate;
+    animation-delay: 1s;
+}
+@keyframes dotFlashing {
+    0% { background-color: #9ca3af; }
+    50%, 100% { background-color: #e5e7eb; }
+}
+/* Styling for the new speed slider */
+#speed-slider-container {
+    transition: all 0.3s ease-in-out;
+}
